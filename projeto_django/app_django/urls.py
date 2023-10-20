@@ -1,6 +1,6 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from app_django.views import CadastroNovoUsuarioView
+
 urlpatterns = [
-path("admin/", admin.site.urls),
-path('', include('exemplo_autenticacao_autorizacao_app.urls'))
+    path('signup/', CadastroNovoUsuarioView.as_view(), name='signup'),
 ]

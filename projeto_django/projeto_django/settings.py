@@ -9,13 +9,21 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+# O CONTEUDO DO .ENV PARA NÂO TER QUE CRIAR DO ZERO TODA VEZ
+# SECRET_KEY=django-insecure-wn+%#)03bb2xk=znd*w+iah6gvolzc%0rpr==khik=$v8pduf@
+# DEBUG=True
+# DATABASE_DEFAULT_NAME=defaultdb
+# DATABASE_DEFAULT_USER=avnadmin
+# DATABASE_DEFAULT_PASSWORD=AVNS_CeYQZRqz0GDd4GiCPWj
+# DATABASE_DEFAULT_HOST=pi-6dd-pi6dd.a.aivencloud.com
+# DATABASE_DEFAULT_PORT=15364
 
 from pathlib import Path
 import environ
 env = environ.Env(
 #deixamos False por padrão
 #caso o .env não defina, por segurança, é melhor, já que o ambiente pode ser o de produção
-DEBUG = (bool, True)
+    DEBUG = (bool, True)
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
