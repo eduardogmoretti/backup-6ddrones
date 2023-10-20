@@ -11,9 +11,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+env = environ.Env(
+#deixamos False por padrão
+#caso o .env não defina, por segurança, é melhor, já que o ambiente pode ser o de produção
+DEBUG = (bool, True)
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+environ.Env.read_env(BASE_DIR / Path(".env"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,7 +30,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wn+%#)03bb2xk=znd*w+iah6gvolzc%0rpr==khik=$v8pduf@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
+
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'projeto_django',
     'app_django'
 ]
 
@@ -78,13 +87,14 @@ WSGI_APPLICATION = 'projeto_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_app_drones',
-        'USER': 'postgres',
-        'PASSWORD': 'postgreimt',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': ('defaultdb'),
+        'USER': ('avnadmin'),
+        'PASSWORD': ('AVNS_CeYQZRqz0GDd4GiCPWj'),
+        'HOST': ('pi-6dd-pi6dd.a.aivencloud.com'),
+        'PORT': ('15364'),
     }
 }
+
 
 
 # Password validation
