@@ -9,6 +9,13 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+# CONTEUDO PARA SER BAIXADO NO TERMINAL TODA VEZ QUE FOR UTILIZAR O PROJETO
+# pip install django
+# pip install djangorestframework psycopg2
+# pip install django-environ
+# python manage.py migrate
+# python manage.py runserver
+
 # O CONTEUDO DO .ENV PARA NÂO TER QUE CRIAR DO ZERO TODA VEZ
 # SECRET_KEY=django-insecure-wn+%#)03bb2xk=znd*w+iah6gvolzc%0rpr==khik=$v8pduf@
 # DEBUG=True
