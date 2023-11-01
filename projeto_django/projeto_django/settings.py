@@ -16,14 +16,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 # python manage.py migrate
 # python manage.py runserver
 
-# O CONTEUDO DO .ENV PARA NÂO TER QUE CRIAR DO ZERO TODA VEZ
-# SECRET_KEY=django-insecure-wn+%#)03bb2xk=znd*w+iah6gvolzc%0rpr==khik=$v8pduf@
-# DEBUG=True
-# DATABASE_DEFAULT_NAME=defaultdb
-# DATABASE_DEFAULT_USER=avnadmin
-# DATABASE_DEFAULT_PASSWORD=AVNS_CeYQZRqz0GDd4GiCPWj
-# DATABASE_DEFAULT_HOST=pi-6dd-pi6dd.a.aivencloud.com
-# DATABASE_DEFAULT_PORT=15364
+# CONTEUDO DO SELECT DAS QUERYS
+# SELECT * FROM auth_group
+# SELECT * FROM auth_user
+# SELECT * FROM auth_user_groups
+# SELECT u.username, u.id, g.name, g.id
+#     FROM auth_user u
+#     INNER JOIN auth_user_groups ug ON u.id = ug.user_id
+#     INNER JOIN auth_group g ON ug.group_id = g.id
+#     WHERE u.id = 5 AND g.id = 2
+
 
 from pathlib import Path
 import environ
